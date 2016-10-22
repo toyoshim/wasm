@@ -2,6 +2,9 @@
 set -ex
 cd "$(dirname "$0")/.."
 
+if [ ! -d lib ]; then
+  mkdir lib
+fi
 cd lib
 [ -e "musl" ] || git clone --depth=1 "git://git.musl-libc.org/musl"
 [ -e "compiler-rt" ] || git clone --depth=1 "http://llvm.org/git/compiler-rt.git"
